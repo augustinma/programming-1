@@ -1,0 +1,48 @@
+The task is to develop a program that finds k-th square free integer.
+
+A number is a square-free integer if it is not divisible by a square of any other integer n ≥ 1. For instance, 1, 2, 6, and 42 are examples of square-free integers (the factorizations are 1 = 1, 2 = 2, 6 = 2 * 3, 42 = 2 * 3 * 7). There is not a square (or any higher power) of any factor in the factorizations above. On the other hand, numbers 4, 12, 27, and 98 are examples of integers that are not square free. The numbers factorize like 4 = 22, 12 = 22 * 3, 27 = 33, and 98 = 2 * 72, thus there is at least one factor squared (or in a higher power) in each factorization above.
+
+The square-free numbers form a sequence:
+
+1, 2, 3, 5, 6, 7, 10, 11, 13, 14, 15, 17, 19, 21, 22, 23, 26, 29, 30, ...
+
+The program is given a list of integers k, the program finds and prints out the k-th square-free number in the sequence. Thus, the expected output is:
+
+k         output  
+1         1
+2         2
+3         3
+4         5
+5         6
+6         7
+7         10
+...
+
+The processing of input stops when the program reaches the end of the input (EOF).
+
+The output of the program is the k-th square-free integer for each input value k. The format of the output is clear from the examples below.
+
+The program must test input data. If the input is invalid, the program detects it, it outputs an error message and terminates. If displayed, the error message must be displayed on standard output (do not send it to the error output) and the error message must be terminated by a newline (\n). The input is considered invalid, if:
+
+    the input value is not an integer,
+    or is not a valid natural number (is negative or zero).
+
+Sample program runs:
+
+Index:
+1
+= 1
+2
+= 2
+42
+= 67
+2020
+= 3317
+0
+Invalid input.
+
+Index:
+666
+= 1097
+test
+Invalid input.
