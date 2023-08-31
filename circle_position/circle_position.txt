@@ -1,0 +1,68 @@
+The task is to develop a program to analyze the mutual position of two circles.
+
+The input of your program are two circles. Each circle is given by its center point (x and y coordinates) and the radius. Thus, the input are 3 decimal numbers x y r for each circle.
+
+The output of the program is the computed position of the circles. There might be a total of 6 answers:
+
+    the two circles are identical,
+    one circle is inside the other one,
+    internal touch,
+    the circles intersect,
+    external touch,
+    the circles lie outside each other.
+
+The program decides the position and outputs one of the six variants. The exact output format is shown in sample runs below. Moreover, the size of the overlapping area is displayed where applicable. Note: the output line must be terminated by a newline (\n).
+
+The program must test input data. If the input is invalid, the program detects it, it outputs an error message and terminates. If displayed, the error message must be displayed on standard output (do not send it to the error output) and the error message must be terminated by a newline (\n). The input is considered invalid, if:
+
+    the coordinates are invalid (non-numeric values),
+    the radius is invalid (non-numeric value),
+    the radius is negative or zero.
+
+Sample program runs:
+
+Enter circle #1 parameters:
+0 0 5
+Enter circle #2 parameters:
+0 10 5
+External touch, no overlap.
+
+Enter circle #1 parameters:
+0 0 3
+Enter circle #2 parameters:
+1.5 1.5 0.8
+Circle #2 lies inside circle #1, overlap: 2.010619
+
+Enter circle #1 parameters:
+0 0 4
+Enter circle #2 parameters:
+2 0 2
+Internal touch, circle #2 lies inside circle #1, overlap: 12.566371
+
+Enter circle #1 parameters:
+0 0 5
+Enter circle #2 parameters:
+100 100 10
+The circles lie outside each other, no overlap.
+
+Enter circle #1 parameters:
+0 0 4.5
+Enter circle #2 parameters:
+10 10 15
+The circles intersect, overlap: 37.475800
+
+Enter circle #1 parameters:
+-10.25 -20.5 4
+Enter circle #2 parameters:
+-10.25 -20.5 4
+The circles are identical, overlap: 50.265482
+
+Enter circle #1 parameters:
+0 0 -2
+Invalid input.
+
+Enter circle #1 parameters:
+0 12 5
+Enter circle #2 parameters:
+3 7 abc
+Invalid input.
