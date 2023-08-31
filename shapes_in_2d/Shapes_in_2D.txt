@@ -1,0 +1,81 @@
+The task is to develop a program that compares the areas and perimeters of two given shapes.
+
+There are given two planar shapes in the input. A shape may be any of:
+
+    triangle - the input consists of letter T followed by three decimal numbers (sides),
+    rectangle - the input consists of letter R followed by two decimal numbers (sides), or
+    square - the input consists of letter S followed by one decimal number (side).
+
+The program computes the area and the perimeter of both input shapes and compares them. The result of the comparison is then printed to the standard output, the format is clear from the example runs below.
+
+The program must validate input data. If the input is invalid, the program must detect it, it shall output an error message (see below), and terminate. If displayed, the error message must be sent to the standard output (do not send it to the error output) and the error message must be terminated by a newline (\n). The input is considered invalid, if:
+
+    the input shape is invalid (only Triangle/Rectangle/Square is valid),
+    there was not enough decimal numbers to describe the dimensions of the input shape,
+    a dimension is invalid, is not well-formatted, is negative, or zero,
+    the three decimal numbers do not form a valid triangle (triangle inequality),
+    both sides of a rectangle are the same (i.e., the shape is indeed a square).
+
+Sample program runs:
+
+Shape #1
+S 4.5
+Shape #2
+R 2 10.125
+Perimeter: square #1 < rectangle #2
+Area: square #1 = rectangle #2
+
+Shape #1
+R 4 5
+Shape #2
+T 4.5 6 7.5
+Perimeter: rectangle #1 = triangle #2
+Area: rectangle #1 > triangle #2
+
+Shape #1
+
+   T
+ 1
+ 1
+ 1
+Shape #2
+ S
+ 2
+Perimeter: triangle #1 < square #2
+Area: triangle #1 < square #2
+
+Shape #1
+T 7.981 8.899 2.996
+Shape #2
+R 2.959 6.979
+Perimeter: triangle #1 = rectangle #2
+Area: triangle #1 < rectangle #2
+
+Shape #1
+R 6.474 0.559
+Shape #2
+T 0.507 14.276 14.285
+Perimeter: rectangle #1 < triangle #2
+Area: rectangle #1 = triangle #2
+
+Shape #1
+T 20 30 50
+Invalid input.
+
+Shape #1
+S -4
+Invalid input.
+
+Shape #1
+R 20 30
+Shape #2
+T 0.444 0.521 0.965
+Invalid input.
+
+Shape #1
+R 12 12
+Invalid input.
+
+Shape #1
+R 1 abcd
+Invalid input.
