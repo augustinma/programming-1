@@ -1,0 +1,25 @@
+Your task is to develop a a set of functions to manipulate single linked lists. Our linked lists will represent soldiers, and the functions may be considered marshal drill commands.
+
+Our program will represent soldiers in the form of a structure -- TSOLDIER. A platoon is represented by a list of soldiers. The implementation makes use of single linked lists, where each soldier references his next colleague. The last soldier in the platoon has the link set to NULL. Therefore, to manipulate the entire platoon, it is enough to have the reference to the first soldier.
+
+The following commands shall be implemented:
+
+TSOLDIER * mergePlatoons ( TSOLDIER *a, TSOLDIER *b );
+    The function merges two platoons. The source lists (platoons) will vanish, the result is one bigger platoon, returned by the function. The merging, of course, has strict guidelines. The first soldier in source platoon a will become the first in the merged platoon. The next will be soldier #1 from b, soldier #2 from a, soldier #2 from b, ... 
+void splitPlatoon (TSOLDIER *src, TSOLDIER ** a, TSOLDIER ** b )
+
+    The function can be used to split a platoon src into two smaller platoons. The first half of the list will become platoon a, the second half of the list will become platoon b (a and b are out parameters). Both a and b will be equally sized. If the number of soldiers in the source platoon was odd, the last soldier in the source will be discarded (i.e. killed, armies permit some collateral damages).
+void destroyPlatoon (TSOLDIER * x );
+    The function will free memory allocated to represent the soldiers in the platoon. The testing environment will call the function for each platoon created if it is no longer needed. 
+structure TSOLDIER
+    The structure describes a soldier. There are three fields:
+
+        m_Next is a link to the next soldier in the platoon, NULL for the last soldier in the list,
+        m_PersonalID is a personal numbers,
+        m_SecretRecord this is a secret record describing the soldier. Your function (your rank) is not allowed to read/write the data. The data must be preserved unmodified.
+
+The input lists (the platoons) will be prepared by the testing environment. The structures will be allocated in the heap, using malloc function. If your function needs to free the memory, (i.e. in the destroyPlatoon () function), you shall use free. Do NOT use C++ operator delete. The functions that manipulate the platoons shall not create new soldier records. The task is to re-organize the existing lists such that the resulting lists do match the description. Your implementation MUST modify only the links to the next soldiers, it MUST NOT copy the contents of the structures (i.e., do not copy m_PersonalID and m_SecretRecord among existing structures). Copying of structures is discouraged (it is much slower than just link manipulation), moreover, the testing environment detects the copied structures and evaluates them as failures.
+
+Submit a source file containing the implementation of the required functions. The source file must contain the functions themselves and all your supplementary functions needed (called from) the functions. On the other hand, the source file shall not contain #include preprocessor directives and main function (if the #include definitions and main function are inside a conditional compile block, they may stay in the submitted file). Use the code from the attached archive as a basis for your development. If the preprocessor definitions and conditional compilation remain unmodified, the file may be submitted to the Progtest.
+
+The functions will be tested in a limited environment. The problem does not have any high memory/time requirements. The difficulty is in the pointers and memory manipulation. Be careful when handling the ends of the lists -- NULL must be set in the m_Next to indicate the end of a platoon. Next, an empty platoon is a valid platoon description which may be used in place of input parameters. The functions must handle this "empty" platoon properly and must not crash. Merging of an empty platoon does not add anything, splitting an empty platoon results in two empty platoons, and destroying of an empty platoon again does not do anything. It is highly recommended to test your program with a memory debugger!
