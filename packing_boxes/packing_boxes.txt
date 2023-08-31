@@ -1,0 +1,48 @@
+The task is to develop a program that helps deciding how to pack boxes.
+
+Assume a paper-made box of a prismatic shape. The box is fully described by its outer dimensions a b c. The paper is 0.4 cm thick. Given two boxes as the input, the problem is to decide whether one box could be placed into the other box. Moreover, if it could, the program shall compute how many small boxes could be packed into the bigger box. When packing the big box, the small boxes may be rotated in any desired direction. However, all small boxes must be oriented in the same way.
+
+The input of the program are dimensions of two boxes. Each box is described by a triplet of integer numbers a b c. The dimensions are in centimeters.
+
+The output of the program is the decision whether one box fits into the other, or not. Moreover, if one box could be packed into the other box, the program outputs how many small boxes could be packed. The output format is shown in the sample runs below. Each output line (including the last one) is followed by a newline (\n).
+
+The program must test input data. If the input is invalid, the program detects it, it outputs an error message and terminates. If displayed, the error message must be displayed on standard output (do not send it to the error output) and the error message must be terminated by a newline (\n). The input is considered invalid, if:
+
+    a dimension is invalid (non-numeric values),
+    a dimension is negative or zero.
+
+Sample program runs:
+
+Enter box A dimensions:
+11 21 31
+Enter box B dimensions:
+5 10 15
+8 box(es) B could be packed into A.
+
+Enter box A dimensions:
+10 10 20
+Enter box B dimensions:
+11 21 11
+1 box(es) A could be packed into B.
+
+Enter box A dimensions:
+8 10 24
+Enter box B dimensions:
+8 11 25
+Neither A nor B could be packed into the other.
+
+Enter box A dimensions:
+1 1 1
+Enter box B dimensions:
+1000 1000 1000
+997002999 box(es) A could be packed into B.
+
+Enter box A dimensions:
+3 12 5
+Enter box B dimensions:
+2 7 abc
+Invalid input.
+
+Enter box A dimensions:
+11 -3 2
+Invalid input.
