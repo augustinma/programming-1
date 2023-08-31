@@ -1,0 +1,45 @@
+The task is to develop a program which computes the number of different triangles that may be constructed using construction kit "Merkur".
+
+Merkur construction kit contains metal beams of different lengths. A triangle may be constructed using three such beams and three screws. Assume we have a list of beams in our construction set. The problem is to count distinct triangles that may be constructed using the beams from the list.
+
+The input of the program is a list of beams in the construction set. Each beam is listed using an integer number - the length of the beam. If there are several beams of the same length then the same length appears several times in the input. The input is finished when the end-of-file is reached (EOF is active for the standard input). The total number of beams is limited to 10000.
+
+The output of the program is the number of different triangles that may be constructed using beams from the construction set. Only distinct triangles are counted, e.g. triangles 3-4-5 and 5-3-4 are considered identical.
+
+The program must validate input data. If the input is invalid, the program detects it, it outputs an error message and terminates. If displayed, the error message must be displayed on the standard output (do not send it to the error output) and the error message must be terminated by a newline (\n). The input is considered invalid, if there is:
+
+    invalid beam length (non-numeric values, zero, or negative),
+    less than three beams in the input, or
+    more than 10000 beams in the input.
+
+Your program will be tested in a restricted environment. The testing environment limits running time and available memory. The exact time and memory limits are shown in the reference solution testing log. The memory limit shall not apply in this problem. On the other hand, the time limit may be of some concern. The mandatory tests use only a small number of beams. Thus, a reasonable implementation of a naive algorithm shall be sufficient.
+
+There is a bonus test included in this homework. The bonus test uses higher number of beams, thus the running time may be higher. An improved algorithm is needed to pass the bonus test.
+
+There is a memory usage test included in the testing. Among others, the test validates memory access in your program. If your program reads or writes memory outside of the allocated area (e.g. outside of array bounds), the test is failed and your program crashes.
+Sample program runs:
+
+Beam lengths:
+1 12 4 8 3 1 5
+Triangles: 3
+
+Beam lengths:
+2 9 18 4 1 5 19 6
+3 1 2 8
+Triangles: 27
+
+Beam lengths:
+1 1 1
+Triangles: 1
+
+Beam lengths:
+3 3 4 4 5 5
+Triangles: 7
+
+Beam lengths:
+1 2
+Invalid input.
+
+Beam lengths:
+9 6 7 5 test
+Invalid input.
