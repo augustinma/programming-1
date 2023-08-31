@@ -1,0 +1,45 @@
+The task is to implement a function (not a whole program, just a function) which computes how many times does a cuckoo-clock cuckoo.
+
+We assume a standard cuckoo-clock. The clock does cuckoo each half hour. In half, there is one cuckoo. At the top of the hour, there is cuckoo 1 to 12 times, based on the hour. Thus, at midnight (0:00), there is cuckoo 12 times, at 1:00 there is cuckoo once, at 2:00 there is cuckoo twice, ..., at 12:00 there is cuckoo 12 times, at 13:00 there is cuckoo once, at 14:00 there is cuckoo twice, ...
+
+Our function will be given two timestamps - the start and the end of the time interval. Each timestamp is defined by year, month, day, hour, and minute. The function computes how many times there was a cuckoo in the interval. We assume the boundaries inclusive, i.e., if there is a cuckoo at the moment of the start/end, it is included.
+
+The required interface is:
+
+int cuckooClock ( int y1, int m1, int d1, int h1, int i1,
+                  int y2, int m2, int d2, int h2, int i2,
+                  long long int * cuckoo )
+
+y1, m1, d1, h1, i1
+    are input parameters representing year, month, day, hour, and minute. They define the start of the interval,
+y2, m2, d2, h2, i2
+    are input parameters representing year, month, day, hour, and minute. They define the end of the interval,
+cuckoo
+    is an output parameter. The function must fill it with the total number of cuckoo in the time interval. The parameter is to be set only if the input parameters are valid. If the input parameters are invalid, the function must not modify the output parameter in any way.
+return value
+    must be set to 1 if the input was valid, 0 if the input parameters were invalid.
+
+The input parameters must define a valid timestamp. To be valid, the input must satisfy the following restrictions:
+
+    year must be greater or equal to 1600,
+    month is valid (1 to 12),
+    day is valid (1 to the number of days in the month),
+    hour is valid (0 to 23),
+    minute is valid (0 to 59),
+    the end timestamp must not precede the start timestamp.
+
+Submit a source file with the implementation of the required function cuckooClock. Further, the source file must include your auxiliary functions which are called from cuckooClock. The function will be called from the testing environment, thus, it is important to adhere to the required interface. Use the sample code below as a basis for your development, complete cuckooClock and add your required auxiliary functions. There is an example main with some test in the sample below. These values will be used in the basic test. Please note the header files as well as main is nested in a conditional compile block (#ifdef/#endif). Please keep these conditional compile block in place. They are present to simplify the development. When compiling on your computer, the headers and main will be present as usual. On the other hand, the header and main will "disappear" when compiled by Progtest. Thus, your testing main will not interfere with the testing environment's main.
+
+We assume standard Gregorian calendar when counting days. Thus, there is a fixed number of days (30/31) in a month, with the exception of February. February is either 28 days (non-leap year) or 29 days (a leap year). The leap year rules of Gregorian calendar are:
+
+    years are not leap years in general,
+    except multiples of 4 which are leap years,
+    except multiples of 100 which are not leap years,
+    except multiples of 400 which are leap years,
+    except multiples of 4000 which are not leap years.
+
+Thus, years 1901, 1902, 1903, 1905, ... are not leap years (rule #1), years 1904, 1908, ..., 1996, 2004, ... are leap years (rule #2), years 1700, 1800, 1900, 2100, ... are not leap years (rule #3), years 1600, 2000, 2400, ..., 3600, 4400, ... are leap years (rule #4), and years 4000, 8000, ... are not leap years (rule #5).
+
+Your function will be executed in a limited environment. There are limits on both time and memory. The exact limits are shown in the test log of the reference. The time limits are set such that a correct implementation of the naive solution passes all mandatory tests. Thus, the solution may be awarded nominal 100% percent. The algorithm must be improved to pass the bonus test and award the extra points. There are long intervals tested in the bonus tests (years exceed 4000 several orders of magnitude).
+
+Example calls of the function are included in the attached archive.
